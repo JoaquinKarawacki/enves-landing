@@ -19,12 +19,41 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.toggle('is-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.querySelectorAll('.mm-submenu a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('is-open');
+      mobileMenu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }));
+    mobileMenu.querySelectorAll(':scope > a').forEach(a => a.addEventListener('click', () => {
       burger.classList.remove('is-open');
       mobileMenu.classList.remove('is-open');
       document.body.style.overflow = '';
     }));
   }
+
+  /* ---- Mobile menu accordion (Seguros Personales) ---- */
+  mobileMenu && mobileMenu.querySelectorAll('.mm-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      trigger.closest('.mm-group').classList.toggle('is-open');
+    });
+  });
+
+  /* ---- Desktop dropdown (Seguros Personales) ---- */
+  document.querySelectorAll('.main-nav .nav-item.has-dropdown').forEach(item => {
+    const trigger = item.querySelector('.dropdown-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = item.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!item.contains(e.target)) {
+        item.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
 
   /* ---- Hero slider ---- */
   const slides = document.querySelectorAll('.hero-slide');

@@ -13,14 +13,35 @@
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="brand">
-      <span class="brand-word">EN<span class="v">V</span>ÉS</span>
-      <span class="brand-sub">seguros</span>
+      <img src="img/logo.png?v=2" alt="Envés Seguros" width="296" height="122">
     </a>
     <nav class="main-nav">
       <a href="index.html">Inicio</a>
-      <a href="seguros.html" class="active">Seguros</a>
       <a href="nosotros.html">Nosotros</a>
+      <a href="seguros.html#empresarial">Seguros Empresariales</a>
+      <div class="nav-item has-dropdown">
+        <button type="button" class="nav-link dropdown-trigger active" aria-expanded="false">
+          Seguros Personales
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-panel">
+          <a href="seguros.html#automotor">Automóviles</a>
+          <a href="seguros.html#bicicletas">Bicicletas</a>
+          <a href="seguros.html#viajes">De viaje</a>
+          <a href="seguros.html#embarcaciones">Embarcaciones de placer</a>
+          <a href="seguros.html#garantias-alquiler">Garantías de alquiler</a>
+          <a href="seguros.html#hogar">Hogar</a>
+          <a href="seguros.html#mascotas">Mascotas</a>
+          <a href="seguros.html#vida">Vida</a>
+          <a href="seguros.html#incendio">Incendio</a>
+        </div>
+      </div>
+      <a href="#">Promociones</a>
+      <a href="#">Servicios</a>
+      <a href="index.html#siniestros">Siniestros</a>
+      <a href="#">Referencias</a>
       <a href="contacto.html">Contacto</a>
+      <a href="#">Trabajá con nosotros</a>
     </nav>
     <div class="header-actions">
       <a href="tel:+59891577914" class="header-phone">
@@ -38,11 +59,36 @@
 
 <div class="mobile-menu">
   <a href="index.html">Inicio</a>
-  <a href="seguros.html">Seguros</a>
   <a href="nosotros.html">Nosotros</a>
+  <a href="seguros.html#empresarial">Seguros Empresariales</a>
+  <div class="mm-group">
+    <button type="button" class="mm-trigger">Seguros Personales
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="mm-submenu"><div class="mm-submenu-inner">
+      <a href="seguros.html#automotor">Automóviles</a>
+      <a href="seguros.html#bicicletas">Bicicletas</a>
+      <a href="seguros.html#viajes">De viaje</a>
+      <a href="seguros.html#embarcaciones">Embarcaciones de placer</a>
+      <a href="seguros.html#garantias-alquiler">Garantías de alquiler</a>
+      <a href="seguros.html#hogar">Hogar</a>
+      <a href="seguros.html#mascotas">Mascotas</a>
+      <a href="seguros.html#vida">Vida</a>
+      <a href="seguros.html#incendio">Incendio</a>
+    </div></div>
+  </div>
+  <a href="#">Promociones</a>
+  <a href="#">Servicios</a>
+  <a href="index.html#siniestros">Siniestros</a>
+  <a href="#">Referencias</a>
   <a href="contacto.html">Contacto</a>
+  <a href="#">Trabajá con nosotros</a>
   <span class="mm-contact">+598 91 577 914 · contacto@enves.com.uy</span>
 </div>
+
+<a href="https://wa.me/59891577914" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-1L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+</a>
 
 <section class="page-hero">
   <div class="stripe-corner"></div>
@@ -63,14 +109,16 @@
     </div>
     <div class="rubro-detail-copy">
       <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div>
-      <h2>Seguro de Automotor</h2>
-      <p>Protegé tu auto, moto, camioneta o utilitario ante los imprevistos del día a día. Comparamos compañías para ofrecerte la cobertura más conveniente según tu uso y presupuesto.</p>
-      <ul class="check-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Responsabilidad civil obligatoria y ampliada</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cobertura por choque, vuelco e incendio</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Robo total y parcial</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Asistencia mecánica y grúa las 24 horas</li>
-      </ul>
+      <h2>Seguros de Vehículos</h2>
+      <p>Tu auto, camioneta o moto merecen la mejor protección. En ENVÉS te asesoramos para encontrar el plan que mejor se adapta a tu vehículo y a tu bolsillo, con acceso a todas las coberturas disponibles en el mercado uruguayo.</p>
+      <h3>¿Qué podés asegurar?</h3>
+      <p>Automóviles, camionetas, motocicletas, motonetas y más. Cualquier vehículo tiene su solución.</p>
+      <h3>Coberturas disponibles</h3>
+      <p>Según el plan que elijas, tu vehículo puede quedar cubierto frente a daños por accidente, hurto total o parcial, incendio, responsabilidad civil por daños a terceros, y accidentes personales para el conductor y pasajeros. Además, contás con cobertura en Uruguay, Argentina, Brasil, Chile y Paraguay.</p>
+      <h3>Beneficios adicionales</h3>
+      <p>Algunos planes incluyen auxilio mecánico sin costo, garantía de reparación en talleres autorizados, cobertura de cristales y cerrajería, y la posibilidad de combinar el seguro del auto con la cobertura del hogar o un seguro de vida en una sola póliza.</p>
+      <h3>Desde lo básico hasta lo más completo</h3>
+      <p>Existen distintos niveles de cobertura — desde el SOA obligatorio hasta planes integrales que cubren prácticamente cualquier eventualidad. En ENVÉS analizamos tu caso y te presentamos las opciones para que elijas con toda la información.</p>
       <a href="contacto.html" class="btn btn-dark">Cotizar seguro de auto
         <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
       </a>
@@ -85,13 +133,15 @@
     <div class="rubro-detail-copy">
       <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></div>
       <h2>Seguro de Hogar</h2>
-      <p>Cuidamos tu vivienda —propia o alquilada— y todo lo que hay dentro de ella, ante incendio, robo, daños por agua y mucho más.</p>
-      <ul class="check-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Incendio, rayo y explosión</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Robo y hurto de contenidos</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Daños por agua y rotura de cristales</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Responsabilidad civil del hogar</li>
-      </ul>
+      <p>Tu hogar concentra todo lo que más valorás — la vivienda, el contenido, los recuerdos. En ENVÉS te asesoramos para que cada rincón de tu casa esté protegido ante los imprevistos que la vida puede traer, con la cobertura que mejor se adapta a tu situación.</p>
+      <h3>¿Qué puede cubrir?</h3>
+      <p>Según el plan elegido, el seguro de hogar puede protegerte frente a hurto e incendio del contenido de la vivienda, daños al edificio por fuego, explosión, huracanes, granizo, terremoto o impacto de vehículos, rotura de cristales exteriores, daños por caída de rayos, responsabilidad civil frente a terceros, y gastos de limpieza y remoción de escombros tras un siniestro.</p>
+      <h3>Flexible según lo que necesitás</h3>
+      <p>Existen planes de contratación simple, sin necesidad de inventarios ni inspecciones previas, donde vos elegís el capital a asegurar. También hay opciones más completas que permiten declarar el contenido del hogar en detalle para una cobertura más exhaustiva. En ambos casos podés incorporar coberturas adicionales opcionales según tus necesidades.</p>
+      <h3>Indemnización sin complicaciones</h3>
+      <p>En caso de siniestro, los bienes dañados se valoran a precio de reposición, sin depreciación por uso. La indemnización se abona en efectivo, permitiéndote elegir libremente dónde y cómo reponer lo perdido.</p>
+      <h3>Servicio de asistencia incluido</h3>
+      <p>Muchos planes incorporan servicio de asistencia de urgencia en cerrajería, vidriería, electricidad y otras especialidades del hogar, disponible para ayudarte a restablecer la seguridad de tu vivienda cuando más lo necesitás.</p>
       <a href="contacto.html" class="btn btn-dark">Cotizar seguro de hogar
         <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
       </a>
@@ -105,14 +155,16 @@
     </div>
     <div class="rubro-detail-copy">
       <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-9.5-8.8C.8 8 2 4.5 5.5 4a5 5 0 0 1 6.5 2 5 5 0 0 1 6.5-2c3.5.5 4.7 4 3 7.2C19 15.65 12 20 12 20z"/></svg></div>
-      <h2>Seguro de Vida</h2>
-      <p>Un respaldo económico para las personas que más querés, ante fallecimiento o invalidez. Planes flexibles que se adaptan a cada etapa de tu vida.</p>
-      <ul class="check-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cobertura por fallecimiento e invalidez</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Planes individuales y colectivos</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sumas aseguradas a medida</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Coberturas adicionales opcionales</li>
-      </ul>
+      <h2>Seguro de Vida con Ahorro</h2>
+      <p>Proteger a tu familia y construir un ahorro para el futuro son dos objetivos que pueden ir de la mano. El seguro de vida con ahorro te permite generar un capital propio a lo largo del tiempo y al mismo tiempo dejar a tus seres queridos respaldados desde el primer día, ante cualquier imprevisto.</p>
+      <h3>¿Cómo funciona?</h3>
+      <p>Elegís el capital que querés acumular al final del período contratado y la aseguradora te garantiza ese monto. Si antes de llegar a ese plazo el asegurado fallece, los beneficiarios designados reciben el capital pactado. Es decir: o cobrás vos el ahorro cuando llegue el momento, o lo cobran tus beneficiarios si algo te ocurre antes.</p>
+      <h3>Períodos de cobertura flexibles</h3>
+      <p>Podés contratar el seguro hasta una edad determinada — 55, 60 o 65 años — o por un período fijo de 10, 15 o 20 años, según lo que mejor se adapte a tu planificación personal o familiar.</p>
+      <h3>Coberturas adicionales disponibles</h3>
+      <p>Según el plan elegido, podés incorporar beneficios como exención del pago de primas en caso de incapacidad total y permanente, indemnización por diagnóstico de enfermedades graves como cáncer o infarto, renta diaria por internación, indemnización adicional por fallecimiento accidental, cobertura de invalidez por accidente, e ingreso mensual de reemplazo en caso de incapacidad temporaria — especialmente útil para profesionales independientes y empresarios.</p>
+      <h3>Una decisión que cuida a los tuyos hoy y mañana</h3>
+      <p>En ENVÉS te asesoramos para encontrar el plan que mejor se ajusta a tu etapa de vida, tus ingresos y tus objetivos, combinando protección familiar con una herramienta de ahorro a largo plazo.</p>
       <a href="contacto.html" class="btn btn-dark">Cotizar seguro de vida
         <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
       </a>
@@ -147,17 +199,188 @@
     </div>
     <div class="rubro-detail-copy">
       <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
-      <h2>Seguro de Viajes</h2>
-      <p>Viajá tranquilo dentro y fuera de Uruguay con asistencia al viajero ante emergencias médicas, pérdida de equipaje y más.</p>
-      <ul class="check-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Asistencia médica en el exterior</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cobertura por pérdida o demora de equipaje</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cancelación y demora de vuelos</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Asistencia las 24 horas, los 365 días</li>
-      </ul>
+      <h2>Seguro de Viaje</h2>
+      <p>Viajar es una de las mejores experiencias de la vida — pero imprevistos como una enfermedad, un accidente o la pérdida de equipaje pueden arruinar cualquier plan. En ENVÉS te asesoramos para que salgas del país con la cobertura adecuada, sin pagar de más ni quedarte con menos de lo que necesitás.</p>
+      <h3>¿Qué cubre?</h3>
+      <p>Según el plan elegido, el seguro de viaje puede incluir asistencia médica internacional ante enfermedades o accidentes, cobertura de enfermedades preexistentes, muerte accidental, práctica de deportes recreativos, embarazo hasta determinada semana de gestación, pérdida o demora de equipaje, cancelación o demora de vuelos, y asistencia en trámites ante pérdida de documentación en el exterior.</p>
+      <h3>Distintos niveles de cobertura</h3>
+      <p>Existen opciones con diferentes capitales de asistencia médica, adaptables según el destino, la duración del viaje y el perfil del viajero. En ENVÉS analizamos tu caso y te recomendamos el nivel de cobertura más conveniente.</p>
+      <h3>Ideal también para viajeros frecuentes</h3>
+      <p>Si viajás varias veces al año, existen planes anuales multiviaje que simplifican la contratación y reducen el costo total. Para empresas con ejecutivos que viajan habitualmente, también hay opciones corporativas.</p>
+      <h3>Asistencia en cualquier parte del mundo</h3>
+      <p>En caso de necesitar ayuda durante el viaje, contás con una red de asistencia internacional disponible las 24 horas, todos los días del año.</p>
       <a href="contacto.html" class="btn btn-dark">Cotizar seguro de viajes
         <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
       </a>
+    </div>
+  </div>
+
+  <div class="rubro-detail flip reveal" id="bicicletas">
+    <div class="rubro-detail-media">
+      <img src="img/family.jpg" alt="Seguro de bicicletas">
+      <span class="tag">Uso urbano y deportivo</span>
+    </div>
+    <div class="rubro-detail-copy">
+      <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5L10 8h4l4.5 9.5M10 8l2 4.5h6.5"/></svg></div>
+      <h2>Seguro de Bicicleta</h2>
+      <p>El uso de la bicicleta crece cada día en Uruguay y con él también los riesgos. Ya sea para ir al trabajo, hacer deporte o moverse por la ciudad, tu bici merece la misma protección que cualquier otro bien valioso. En ENVÉS te asesoramos para encontrar la cobertura que mejor se adapta a tu bicicleta y a tu forma de usarla.</p>
+      <h3>¿Qué puede cubrir?</h3>
+      <p>Según el plan que elijas, podés protegerte frente a hurto, rapiña e incendio total o parcial de la bicicleta; daños accidentales cuando el cuadro resulte afectado por un golpe externo, ya sea en circulación, en reposo o durante su transporte; responsabilidad civil frente a terceros por daños personales o materiales; y accidentes personales del ciclista en caso de fallecimiento o incapacidad.</p>
+      <h3>¿Qué bicicletas se pueden asegurar?</h3>
+      <p>En general se aceptan bicicletas de hasta dos años de antigüedad presentando factura de compra y fotos del vehículo. Para bicicletas de hasta dos años se indemniza a valor de nuevo.</p>
+      <h3>Importante tener en cuenta</h3>
+      <p>Este seguro cubre el uso personal y recreativo de la bicicleta. No aplica para uso comercial como delivery o mensajería, ni para participación en competencias deportivas. En caso de siniestro por daños propios, se aplica un deducible sobre el valor del bien.</p>
+      <a href="contacto.html" class="btn btn-dark">Cotizar seguro de bicicleta
+        <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="rubro-detail reveal" id="garantias-alquiler">
+    <div class="rubro-detail-media">
+      <img src="img/meeting.jpg" alt="Garantías de alquiler">
+      <span class="tag">Alquilá sin depósito</span>
+    </div>
+    <div class="rubro-detail-copy">
+      <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="15" r="4"/><path d="M9.6 12.4L20 2M15.5 6.5l3 3M12.5 9.5l2.3 2.3"/></svg></div>
+      <h2>Garantías de Alquiler</h2>
+      <p>Alquilar una propiedad debería ser un proceso simple y seguro para todas las partes. La garantía de alquiler es una póliza de seguro que reemplaza al fiador tradicional, facilitando la contratación del arrendamiento y protegiendo los intereses tanto del inquilino como del propietario.</p>
+      <h3>Para el inquilino</h3>
+      <p>Una solución accesible que elimina la necesidad de contar con un garante solidario. La tramitación es ágil y permite concretar el alquiler sin demoras ni trámites complicados.</p>
+      <h3>Para el propietario</h3>
+      <p>Sin costo alguno para el arrendador. La póliza garantiza el cobro del alquiler ante incumplimiento del inquilino, con cobertura jurídica incluida que cubre honorarios de abogados y costas judiciales en caso de ser necesario.</p>
+      <h3>¿Qué puede cubrir?</h3>
+      <p>Según el plan contratado, la garantía puede incluir el pago del alquiler adeudado por hasta 36 meses, daños al inmueble, gastos comunes ordinarios, impuestos de puerta, tarifas de saneamiento, OSE, UTE y gas por cañería — cada uno con sus respectivos límites de cobertura.</p>
+      <h3>Un beneficio para todos</h3>
+      <p>Inquilinos, propietarios e inmobiliarias se benefician de un sistema moderno, ágil y respaldado por compañías aseguradoras de primer nivel. En ENVÉS te asesoramos en todo el proceso para que la relación de arrendamiento comience con el pie derecho.</p>
+      <a href="contacto.html" class="btn btn-dark">Cotizar garantía de alquiler
+        <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="rubro-detail flip reveal" id="mascotas">
+    <div class="rubro-detail-media">
+      <img src="img/teamwork.jpg" alt="Seguro de mascotas">
+      <span class="tag">Salud y bienestar animal</span>
+    </div>
+    <div class="rubro-detail-copy">
+      <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8.2" r="1.7"/><circle cx="12" cy="6.3" r="1.8"/><circle cx="17" cy="8.2" r="1.7"/><circle cx="19.2" cy="12.8" r="1.7"/><path d="M12 12.8c-3.1 0-6.2 2.1-6.2 5.4 0 1.9 1.7 2.9 3.4 2.2.9-.4 1.8-.6 2.8-.6s1.9.2 2.8.6c1.7.7 3.4-.3 3.4-2.2 0-3.3-3.1-5.4-6.2-5.4z"/></svg></div>
+      <h2>Seguro de Mascotas</h2>
+      <p>Tu mascota es parte de la familia y merece la misma protección. En ENVÉS te ayudamos a encontrar la cobertura adecuada para que puedas atender la salud y el bienestar de tu compañero sin que los imprevistos se conviertan en un problema económico.</p>
+      <h3>¿Qué puede cubrir?</h3>
+      <p>Según el plan elegido, el seguro de mascotas puede incluir asistencia veterinaria a domicilio, intervenciones quirúrgicas, hospitalización, pruebas diagnósticas, cesárea, sacrificio necesario o de urgencia, cobertura por extravío, responsabilidad civil frente a terceros por daños causados por tu mascota, y en planes más completos, indemnización por fallecimiento o sacrificio del animal.</p>
+      <h3>Dos niveles de cobertura</h3>
+      <p>Existen opciones de cobertura esencial, orientada a cubrir las situaciones más frecuentes y costosas como cirugías y hospitalizaciones, y planes más completos que amplían las coberturas e incorporan beneficios adicionales. En ENVÉS analizamos tu caso y te recomendamos la opción más conveniente.</p>
+      <h3>Tranquilidad para vos, cuidado para ellos</h3>
+      <p>Con un seguro de mascotas podés tomar decisiones veterinarias basadas en lo que necesita tu animal y no en lo que podés pagar en ese momento. En ENVÉS te asesoramos para que la salud de tu mascota esté siempre cubierta.</p>
+      <a href="contacto.html" class="btn btn-dark">Cotizar seguro de mascota
+        <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="rubro-detail reveal" id="embarcaciones">
+    <div class="rubro-detail-media">
+      <img src="img/warehouse.jpg" alt="Seguro de embarcaciones de placer">
+      <span class="tag">Cobertura náutica</span>
+    </div>
+    <div class="rubro-detail-copy">
+      <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18l-2.2 3.2a2 2 0 0 1-1.6.8H6.8a2 2 0 0 1-1.6-.8z"/><path d="M12 3v10M12 4.5l5.5 5.5H12"/></svg></div>
+      <h2>Seguro de Embarcaciones de Placer</h2>
+      <p>Navegar es un placer, pero el agua también trae riesgos que no siempre se pueden anticipar. Tormentas que sueltan amarras, incendios en guarderías, colisiones, robos o daños durante el transporte son situaciones reales que pueden afectar seriamente tu embarcación. En ENVÉS te asesoramos para que elijas la cobertura adecuada y sigas navegando con total tranquilidad.</p>
+      <h3>¿Qué embarcaciones se pueden asegurar?</h3>
+      <p>Lanchas, veleros, gomones, motos náuticas, jet ski, kayaks, tablas de windsurf y cualquier otro vehículo náutico de uso recreativo, ya sea con motor fuera de borda o a vela.</p>
+      <h3>¿Qué puede cubrir?</h3>
+      <p>Según el plan elegido, la cobertura puede incluir pérdida total por naufragio, varamiento, incendio o explosión; hurto y rapiña total de la embarcación o del motor fuera de borda; daños por choque con otra embarcación, muelle o cuerpo flotante; daños ocasionados por temporal o inundación; incendio en guardería; responsabilidad civil por daños a terceros, a otras embarcaciones o a personas transportadas; y daños durante el transporte en tráiler.</p>
+      <h3>Cobertura donde estés</h3>
+      <p>La embarcación queda protegida tanto mientras está navegando como cuando está en puerto, en guardería o siendo trasladada por tierra. Además, contás con servicio de auxilio mecánico y remolque disponible las 24 horas, los 365 días del año.</p>
+      <h3>A la medida de tu embarcación</h3>
+      <p>Existen opciones de cobertura básica y la posibilidad de incorporar coberturas adicionales según las características de tu embarcación, el uso que le das y la zona donde navegás. En ENVÉS analizamos tu caso y te recomendamos la combinación más conveniente.</p>
+      <a href="contacto.html" class="btn btn-dark">Cotizar seguro náutico
+        <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="rubro-detail flip reveal" id="incendio">
+    <div class="rubro-detail-media">
+      <img src="img/handshake.jpg" alt="Seguro de incendio">
+      <span class="tag">Protección estructural</span>
+    </div>
+    <div class="rubro-detail-copy">
+      <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c1 3 4.2 4.7 4.2 9.3a4.2 4.2 0 0 1-8.4 0c0-1.9.8-3.1 1.6-4.1-.1 1.5.7 2.2 1.2 1.8-.5-2.5 1-4.8 1.4-7z"/></svg></div>
+      <h2>Seguro de Incendio</h2>
+      <p>Protegé tu propiedad, comercio o industria ante incendio, rayo y explosión. En ENVÉS trabajamos tres variantes según tu situación: la póliza exigida por ley para propiedades horizontales en venta, la cobertura para el edificio como un todo, y la cobertura para tu vivienda y su contenido.</p>
+      <a href="contacto.html" class="btn btn-dark">Cotizar seguro de incendio
+        <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="plan-cards-wrap">
+    <div class="plan-cards">
+
+      <div class="plan-card reveal">
+        <h3>Incendio — Póliza Ley</h3>
+        <p>Si tenés una propiedad horizontal en proceso de venta, este seguro es obligatorio por ley. La Ley N° 10.751 exige que todo inmueble de este tipo cuente con cobertura de incendio hasta el momento en que sea ocupado por su nuevo propietario.</p>
+        <h4>¿A quién está dirigido?</h4>
+        <p>A desarrolladores, inmobiliarias y propietarios que tienen apartamentos o unidades en propiedad horizontal pendientes de escriturar u ocupar. No es una opción — es un requisito legal que en ENVÉS te ayudamos a gestionar de forma simple y rápida.</p>
+        <h4>¿Qué cubre?</h4>
+        <p>Protege el inmueble frente al riesgo de incendio durante todo el período en que la propiedad se encuentre desocupada y en proceso de venta. La póliza tiene vigencia anual y es exclusiva para este tipo de propiedades.</p>
+        <h4>En ENVÉS te lo resolvemos</h4>
+        <p>Sabemos que este tipo de seguros muchas veces se gestionan sobre la marcha, con plazos ajustados. Por eso nos encargamos de todo el trámite para que tengas tu cobertura en regla sin demoras ni complicaciones.</p>
+        <h4>Vigencia</h4>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Anual</li>
+        </ul>
+        <h4>Datos necesarios para cotizar</h4>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Tipo de vivienda</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Material de techo y paredes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Linderos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Capital</li>
+        </ul>
+        <h4>Requieren informe de inspección</h4>
+        <p>Si la comunicación con linderos es de otras ocupaciones; si el material de techos o paredes es combinado; o si el tipo de vivienda es un edificio en propiedad horizontal ocupado por familias, oficinas y riesgos industriales, según ciertos materiales de techos y paredes.</p>
+      </div>
+
+      <div class="plan-card reveal">
+        <h3>Incendio — Edificio</h3>
+        <p>Proteger un edificio en propiedad horizontal requiere una cobertura que contemple a todos sus propietarios. Este seguro ampara la totalidad de los apartamentos del edificio bajo una sola póliza, brindando tranquilidad colectiva con una gestión simple y centralizada.</p>
+        <h4>¿Qué cubre?</h4>
+        <p>La cobertura incluye daños ocasionados por incendio, explosión, humo, huracanes, tornados, granizo, terremoto, impacto de vehículos o aeronaves, tumultos y huelgas. También cubre la remoción de escombros, pérdida de alquileres y daños a cristales por fenómenos climáticos o disturbios.</p>
+        <h4>Coberturas opcionales</h4>
+        <p>Por un costo adicional accesible podés ampliar la protección incluyendo daños por inundaciones y desbordes de cañerías, humo proveniente del exterior del edificio, equipos eléctricos y electrónicos instalados en áreas comunes, y ampliación de capitales para remoción de escombros y pérdida de alquileres.</p>
+        <h4>Flexible en plazos</h4>
+        <p>Podés contratar la póliza de forma anual, por un período menor al año, o a largo plazo — 3, 5 o 10 años — según lo que mejor se adapte a las necesidades del edificio.</p>
+        <h4>En ENVÉS te asesoramos</h4>
+        <p>Analizamos las necesidades de cada edificio y te presentamos la combinación de coberturas más conveniente, sin pagar por lo que no necesitás y sin quedarte sin lo que sí importa.</p>
+        <h4>Vigencia</h4>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Anual, 3, 5 o 10 años</li>
+        </ul>
+        <h4>Datos necesarios para cotizar</h4>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Ocupación</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Materiales de paredes y techos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Capital</li>
+        </ul>
+      </div>
+
+      <div class="plan-card reveal">
+        <h3>Incendio — Vivienda</h3>
+        <p>Tu hogar es mucho más que un inmueble — es todo lo que hay dentro. Este seguro protege tanto la estructura de tu vivienda como su contenido: muebles, electrodomésticos, efectos personales y todo lo que forma parte de tu vida cotidiana.</p>
+        <h4>¿Qué cubre?</h4>
+        <p>La cobertura incluye daños ocasionados por fuego, humo, explosión de artefactos domésticos como calefones o garrafas, caída de rayos, impacto de vehículos o aeronaves, huracanes, tornados, granizo, tumultos y daños a cristales por fenómenos climáticos o disturbios. También cubre la remoción de escombros tras un siniestro.</p>
+        <h4>Coberturas opcionales</h4>
+        <p>Por un costo adicional muy accesible podés ampliar la protección incluyendo daños por inundaciones y desbordes de cañerías, humo proveniente del exterior, terremoto, pérdida de alquileres, rotura de cristales y responsabilidad civil frente a terceros.</p>
+        <h4>Flexible a tu medida</h4>
+        <p>Podés contratar la póliza en forma anual o por períodos más cortos, adaptándola a tu situación. Y si contratás el paquete completo de coberturas, accedés a un descuento en el costo total del seguro.</p>
+        <h4>En ENVÉS te asesoramos</h4>
+        <p>Te ayudamos a definir qué coberturas realmente necesitás — ni más ni menos — para que tu hogar esté bien protegido sin pagar de más.</p>
+      </div>
+
     </div>
   </div>
 

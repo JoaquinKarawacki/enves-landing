@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seguros por rubro — Envés Seguros</title>
-<meta name="description" content="Conocé el detalle de nuestras coberturas: automotor, hogar, vida, salud, viajes, empresarial y agropecuario.">
+<meta name="description" content="Conocé el detalle de nuestras coberturas: automotor, hogar, vida, salud, viajes y agropecuario.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f39236' d='M2 3l6 15 2-6 6 6 3-3-6-6 6-2L2 3z'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,7 +18,29 @@
     <nav class="main-nav">
       <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
-      <a href="seguros.html#empresarial">Seguros Empresariales</a>
+      <div class="nav-item has-dropdown">
+        <button type="button" class="nav-link dropdown-trigger" aria-expanded="false">
+          Seguros Empresariales
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-panel">
+          <a href="seguros-empresariales.html">Ver todos</a>
+          <a href="seguros-empresariales.html#accidentes-trabajo">Accidentes de Trabajo</a>
+          <a href="seguros-empresariales.html#colectivos-vida">Colectivos de Vida</a>
+          <a href="seguros-empresariales.html#construccion-montaje">Construcción y Montaje</a>
+          <a href="seguros-empresariales.html#pequenas-medianas-obras">Pequeñas y Medianas Obras</a>
+          <a href="seguros-empresariales.html#equipos-electronicos">Equipos Electrónicos</a>
+          <a href="seguros-empresariales.html#copropiedades">Copropiedades</a>
+          <a href="seguros-empresariales.html#pymes">Pymes</a>
+          <a href="seguros-empresariales.html#multirriesgo">Multirriesgo</a>
+          <a href="seguros-empresariales.html#flotas">Flotas</a>
+          <a href="seguros-empresariales.html#credito-exportacion">Crédito a la Exportación</a>
+          <a href="seguros-empresariales.html#fianzas">Fianzas</a>
+          <a href="seguros-empresariales.html#rc-operativa-productos">RC Operativa y de Productos</a>
+          <a href="seguros-empresariales.html#rc-profesional">RC Profesional</a>
+          <a href="seguros-empresariales.html#rc-directores-gerentes">RC de Directores y Gerentes</a>
+        </div>
+      </div>
       <div class="nav-item has-dropdown">
         <button type="button" class="nav-link dropdown-trigger active" aria-expanded="false">
           Seguros Personales
@@ -37,8 +59,8 @@
         </div>
       </div>
       <a href="#">Promociones</a>
-      <a href="#">Servicios</a>
-      <a href="index.html#siniestros">Siniestros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="siniestros.html">Siniestros</a>
       <a href="#">Referencias</a>
       <a href="contacto.html">Contacto</a>
       <a href="#">Trabajá con nosotros</a>
@@ -60,7 +82,28 @@
 <div class="mobile-menu">
   <a href="index.html">Inicio</a>
   <a href="nosotros.html">Nosotros</a>
-  <a href="seguros.html#empresarial">Seguros Empresariales</a>
+  <div class="mm-group">
+    <button type="button" class="mm-trigger">Seguros Empresariales
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="mm-submenu"><div class="mm-submenu-inner">
+      <a href="seguros-empresariales.html">Ver todos</a>
+      <a href="seguros-empresariales.html#accidentes-trabajo">Accidentes de Trabajo</a>
+      <a href="seguros-empresariales.html#colectivos-vida">Colectivos de Vida</a>
+      <a href="seguros-empresariales.html#construccion-montaje">Construcción y Montaje</a>
+      <a href="seguros-empresariales.html#pequenas-medianas-obras">Pequeñas y Medianas Obras</a>
+      <a href="seguros-empresariales.html#equipos-electronicos">Equipos Electrónicos</a>
+      <a href="seguros-empresariales.html#copropiedades">Copropiedades</a>
+      <a href="seguros-empresariales.html#pymes">Pymes</a>
+      <a href="seguros-empresariales.html#multirriesgo">Multirriesgo</a>
+      <a href="seguros-empresariales.html#flotas">Flotas</a>
+      <a href="seguros-empresariales.html#credito-exportacion">Crédito a la Exportación</a>
+      <a href="seguros-empresariales.html#fianzas">Fianzas</a>
+      <a href="seguros-empresariales.html#rc-operativa-productos">RC Operativa y de Productos</a>
+      <a href="seguros-empresariales.html#rc-profesional">RC Profesional</a>
+      <a href="seguros-empresariales.html#rc-directores-gerentes">RC de Directores y Gerentes</a>
+    </div></div>
+  </div>
   <div class="mm-group">
     <button type="button" class="mm-trigger">Seguros Personales
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -78,8 +121,8 @@
     </div></div>
   </div>
   <a href="#">Promociones</a>
-  <a href="#">Servicios</a>
-  <a href="index.html#siniestros">Siniestros</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="siniestros.html">Siniestros</a>
   <a href="#">Referencias</a>
   <a href="contacto.html">Contacto</a>
   <a href="#">Trabajá con nosotros</a>
@@ -384,27 +427,6 @@
     </div>
   </div>
 
-  <div class="rubro-detail flip reveal" id="empresarial">
-    <div class="rubro-detail-media">
-      <img src="img/warehouse.jpg" alt="Seguros empresariales">
-      <span class="tag">Pymes y grandes empresas</span>
-    </div>
-    <div class="rubro-detail-copy">
-      <div class="rubro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
-      <h2>Seguros Empresariales</h2>
-      <p>Soluciones a medida para proteger tu negocio: desde incendio y robo hasta responsabilidad civil y accidentes de trabajo.</p>
-      <ul class="check-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Incendio, robo y daños a la infraestructura</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Responsabilidad civil comercial</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Accidentes de trabajo y ART</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Seguros de flota y transporte de mercadería</li>
-      </ul>
-      <a href="contacto.html" class="btn btn-dark">Cotizar seguro empresarial
-        <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-      </a>
-    </div>
-  </div>
-
   <div class="rubro-detail reveal" id="agropecuario">
     <div class="rubro-detail-media">
       <img src="img/agro.jpg" alt="Seguro agropecuario">
@@ -471,7 +493,7 @@
         <li><a href="seguros.html#hogar">Hogar</a></li>
         <li><a href="seguros.html#vida">Vida</a></li>
         <li><a href="seguros.html#salud">Salud</a></li>
-        <li><a href="seguros.html#empresarial">Empresarial</a></li>
+        <li><a href="seguros-empresariales.html">Empresarial</a></li>
       </ul>
     </div>
     <div class="footer-col">

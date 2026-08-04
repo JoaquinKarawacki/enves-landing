@@ -3,10 +3,28 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Header scroll state ---- */
   const header = document.querySelector('.site-header');
   if (header) {
-    const onScroll = () => {
-      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    // Hysteresis: separate enter/exit thresholds so a scroll position
+    // hovering right at one fixed value can't flip the class back and
+    // forth (which visibly shakes the header while it grows/shrinks).
+    let isScrolled = false;
+    let ticking = false;
+    const applyScrollState = () => {
+      ticking = false;
+      const y = window.scrollY;
+      if (!isScrolled && y > 40) {
+        isScrolled = true;
+      } else if (isScrolled && y < 16) {
+        isScrolled = false;
+      }
+      header.classList.toggle('is-scrolled', isScrolled);
     };
-    onScroll();
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(applyScrollState);
+      }
+    };
+    applyScrollState();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 

@@ -154,7 +154,7 @@ section{position:relative;}
 }
 .site-header .container{
   max-width:1500px;
-  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.1rem;
 }
 .site-header.is-scrolled{
   padding-block:.65rem;
@@ -186,11 +186,11 @@ section{position:relative;}
 .brand.on-dark .brand-word{color:#fff;}
 .brand.on-dark .brand-sub{color:rgba(255,255,255,.65);}
 
-.main-nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:nowrap;}
+.main-nav{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap;}
 .main-nav a,.main-nav .nav-link{
   position:relative;
   font-weight:600;
-  font-size:.88rem;
+  font-size:.82rem;
   color:var(--ink);
   padding-block:.3rem;
   background:none;border:none;
@@ -322,8 +322,11 @@ section{position:relative;}
 }
 .mobile-menu.is-open .mm-contact{opacity:1;transform:translateY(0);}
 
-@media (max-width:1720px){
-  .main-nav,.header-phone{display:none;}
+@media (max-width:1600px){
+  .header-phone{display:none;}
+}
+@media (max-width:1320px){
+  .main-nav{display:none;}
   .hamburger{display:block;}
 }
 

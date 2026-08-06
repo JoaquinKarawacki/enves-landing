@@ -154,7 +154,7 @@ section{position:relative;}
 }
 .site-header .container{
   max-width:1500px;
-  display:flex;align-items:center;justify-content:space-between;gap:1.1rem;
+  display:flex;align-items:center;justify-content:flex-start;gap:2.2rem;
 }
 .site-header.is-scrolled{
   padding-block:.65rem;
@@ -239,7 +239,7 @@ section{position:relative;}
 .dropdown-panel a::after{display:none;}
 
 
-.header-actions{display:flex;align-items:center;gap:1.4rem;flex-shrink:0;}
+.header-actions{display:flex;align-items:center;gap:1.4rem;flex-shrink:0;margin-left:auto;}
 .header-phone{
   display:flex;align-items:center;gap:.5rem;
   font-weight:700;font-size:.92rem;
@@ -717,6 +717,11 @@ section{position:relative;}
   gap:2.5rem;
 }
 .footer-brand p{color:rgba(255,255,255,.55);font-size:.92rem;max-width:280px;margin-top:1rem;}
+.footer-logo{
+  display:inline-flex;align-items:center;
+  background:transparent;
+}
+.footer-logo img{height:40px;width:auto;display:block;}
 .footer-col h5{
   font-family:var(--font-body);font-weight:700;
   font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;

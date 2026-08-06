@@ -109,14 +109,26 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  /* ---- Contact form (demo, no backend) ---- */
+  /* ---- Contact form (mailto, no backend) ---- */
   const form = document.querySelector('.js-contact-form');
   if (form) {
+    const CONTACT_RECIPIENTS = ['contacto@enves.com.uy', 'Ldeleon@enves.com.uy', 'Scolistro@enves.com.uy'];
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      const data = new FormData(form);
+      const lines = [];
+      if (data.get('nombre')) lines.push(`Nombre: ${data.get('nombre')}`);
+      if (data.get('telefono')) lines.push(`Teléfono: ${data.get('telefono')}`);
+      if (data.get('email')) lines.push(`Email: ${data.get('email')}`);
+      if (data.get('rubro')) lines.push(`Rubro de interés: ${data.get('rubro')}`);
+      if (data.get('mensaje')) lines.push(`Mensaje: ${data.get('mensaje')}`);
+      const subject = encodeURIComponent('Nueva consulta desde la web');
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:${CONTACT_RECIPIENTS.join(',')}?subject=${subject}&body=${body}`;
+
       const msg = form.querySelector('.form-msg');
       if (msg) {
-        msg.textContent = '¡Gracias! Recibimos tu consulta y un asesor de Envés se va a comunicar a la brevedad.';
+        msg.textContent = 'Se abrió tu cliente de correo con la consulta lista para enviar.';
         msg.classList.add('is-visible');
       }
       form.reset();

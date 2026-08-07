@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 import PromocionesTab from "@/components/admin/PromocionesTab";
+import SiniestrosBseTab from "@/components/admin/SiniestrosBseTab";
 
-// Cada feature futura (siniestros BSE, etc.) agrega su propia entrada acá:
+// Cada feature futura agrega su propia entrada acá:
 // { key, label, render: (token) => <Componente token={token} /> }
-const TABS = [{ key: "promociones", label: "Promociones", render: (token) => <PromocionesTab token={token} /> }];
+const TABS = [
+  { key: "promociones", label: "Promociones", render: (token) => <PromocionesTab token={token} /> },
+  { key: "siniestros-bse", label: "Siniestros BSE", render: (token) => <SiniestrosBseTab token={token} /> },
+];
 
 async function verify(token) {
   const res = await fetch("/api/auth", {

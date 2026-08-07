@@ -3,7 +3,5 @@ node_modules/
 out/
 local-storage/
 public/uploads/
-.env
-.env.local
-.env*.local
 .vercel
+.env*

@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+local-storage/
+public/uploads/
+.env
+.env.local
+.env*.local
+.vercel

@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 const RECIPIENTS = ["contacto@enves.com.uy", "Ldeleon@enves.com.uy", "Scolistro@enves.com.uy"];
-const FROM = "Envés Seguros <onboarding@resend.dev>";
+const FROM = "Envés Seguros <contacto@enves.com.uy>";
 const MAX_CV_SIZE = 5 * 1024 * 1024;
 
 export async function POST(request) {

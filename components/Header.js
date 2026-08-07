@@ -53,7 +53,7 @@ export default function Header({ active }) {
                 <a href="/seguros#incendio">Incendio</a>
               </div>
             </div>
-            <a href="#">Promociones</a>
+            <a href="/promociones" className={cx(active === "promociones" && "active")}>Promociones</a>
             <a href="/servicios" className={cx(active === "servicios" && "active")}>Servicios</a>
             <a href="/siniestros" className={cx(active === "siniestros" && "active")}>Siniestros</a>
             <a href="/contacto" className={cx(active === "contacto" && "active")}>Contacto</a>
@@ -115,7 +115,7 @@ export default function Header({ active }) {
             <a href="/seguros#incendio">Incendio</a>
           </div></div>
         </div>
-        <a href="#">Promociones</a>
+        <a href="/promociones">Promociones</a>
         <a href="/servicios">Servicios</a>
         <a href="/siniestros">Siniestros</a>
         <a href="/contacto">Contacto</a>

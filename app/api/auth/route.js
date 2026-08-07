@@ -1,9 +1,10 @@
-function validarToken(request) {
-  const token = request.headers.get("x-admin-token");
-  return !!token && token === process.env.ADMIN_TOKEN;
-}
+import { validarToken } from "@/lib/adminAuth";
+import { estaLimitado, claveCliente } from "@/lib/rateLimit";
 
 export async function POST(request) {
+  if (estaLimitado(`auth:${claveCliente(request)}`, 10)) {
+    return Response.json({ error: "Demasiados intentos, esperá un minuto" }, { status: 429 });
+  }
   if (!validarToken(request)) {
     return Response.json({ error: "No autorizado" }, { status: 401 });
   }

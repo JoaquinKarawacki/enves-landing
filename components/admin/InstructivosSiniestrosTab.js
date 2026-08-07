@@ -47,6 +47,7 @@ export default function InstructivosSiniestrosTab({ token }) {
     try {
       const uploadData = new FormData();
       uploadData.append("file", file);
+      uploadData.append("tipo", "pdf");
       const uploadRes = await fetch("/api/upload", {
         method: "POST",
         headers: { "x-admin-token": token },

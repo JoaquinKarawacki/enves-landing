@@ -1,12 +1,10 @@
-import { readData, writeData } from "@/lib/storage";
+import { readData, writeData, deleteUpload } from "@/lib/storage";
 import { ordenarInstructivos, generarSlug } from "@/lib/instructivosSiniestros";
+import { validarToken } from "@/lib/adminAuth";
+import { estaLimitado, claveCliente } from "@/lib/rateLimit";
+import { limitarTexto, esUrlSegura } from "@/lib/textFields";
 
 const RECURSO = "instructivos-siniestros";
-
-function validarToken(request) {
-  const token = request.headers.get("x-admin-token");
-  return !!token && token === process.env.ADMIN_TOKEN;
-}
 
 export async function GET() {
   const items = await readData(RECURSO, []);
@@ -14,14 +12,24 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  if (estaLimitado(`instructivo-write:${claveCliente(request)}`, 20)) {
+    return Response.json({ error: "Demasiadas solicitudes, esperá un minuto" }, { status: 429 });
+  }
   if (!validarToken(request)) {
     return Response.json({ error: "No autorizado" }, { status: 401 });
   }
 
   const item = await request.json();
-  const { aseguradora, titulo, descripcion, archivo } = item;
+  const aseguradora = limitarTexto(item.aseguradora, 80);
+  const titulo = limitarTexto(item.titulo, 160);
+  const descripcion = limitarTexto(item.descripcion, 5000);
+  const archivo = limitarTexto(item.archivo, 500);
+
   if (!aseguradora || !titulo || !descripcion || !archivo) {
     return Response.json({ error: "Faltan datos obligatorios" }, { status: 400 });
+  }
+  if (!esUrlSegura(archivo)) {
+    return Response.json({ error: "El archivo no es válido" }, { status: 400 });
   }
 
   const items = await readData(RECURSO, []);
@@ -51,9 +59,11 @@ export async function DELETE(request) {
 
   const { id } = await request.json();
   const items = await readData(RECURSO, []);
-  if (!items.some((i) => i.id === id)) {
+  const item = items.find((i) => i.id === id);
+  if (!item) {
     return Response.json({ error: "No encontrado" }, { status: 404 });
   }
+  await deleteUpload(item.archivo);
   await writeData(RECURSO, items.filter((i) => i.id !== id));
   return Response.json({ ok: true });
 }

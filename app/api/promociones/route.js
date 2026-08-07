@@ -1,10 +1,8 @@
-import { readData, writeData } from "@/lib/storage";
+import { readData, writeData, deleteUpload } from "@/lib/storage";
 import { ordenarPromociones, generarSlug } from "@/lib/promociones";
-
-function validarToken(request) {
-  const token = request.headers.get("x-admin-token");
-  return !!token && token === process.env.ADMIN_TOKEN;
-}
+import { validarToken } from "@/lib/adminAuth";
+import { estaLimitado, claveCliente } from "@/lib/rateLimit";
+import { limitarTexto, esUrlSegura } from "@/lib/textFields";
 
 export async function GET() {
   const promociones = await readData("promociones", []);
@@ -12,14 +10,27 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  if (estaLimitado(`promo-write:${claveCliente(request)}`, 20)) {
+    return Response.json({ error: "Demasiadas solicitudes, esperá un minuto" }, { status: 429 });
+  }
   if (!validarToken(request)) {
     return Response.json({ error: "No autorizado" }, { status: 401 });
   }
 
   const item = await request.json();
-  const { aseguradora, titulo, resumen, descripcion } = item;
+  const aseguradora = limitarTexto(item.aseguradora, 80);
+  const titulo = limitarTexto(item.titulo, 160);
+  const resumen = limitarTexto(item.resumen, 300);
+  const descripcion = limitarTexto(item.descripcion, 5000);
+  const condicionesUrl = limitarTexto(item.condicionesUrl, 500);
+  const vigenciaHasta = limitarTexto(item.vigenciaHasta, 60);
+  const imagen = limitarTexto(item.imagen, 500);
+
   if (!aseguradora || !titulo || !resumen || !descripcion) {
     return Response.json({ error: "Faltan datos obligatorios" }, { status: 400 });
+  }
+  if (!esUrlSegura(condicionesUrl)) {
+    return Response.json({ error: "El link de condiciones no es válido" }, { status: 400 });
   }
 
   const promociones = await readData("promociones", []);
@@ -36,9 +47,9 @@ export async function POST(request) {
     titulo,
     resumen,
     descripcion,
-    imagen: item.imagen || "",
-    condicionesUrl: item.condicionesUrl || "",
-    vigenciaHasta: item.vigenciaHasta || "",
+    imagen,
+    condicionesUrl,
+    vigenciaHasta,
   };
   promociones.unshift(nueva);
   await writeData("promociones", promociones);
@@ -52,9 +63,11 @@ export async function DELETE(request) {
 
   const { id } = await request.json();
   const promociones = await readData("promociones", []);
-  if (!promociones.some((p) => p.id === id)) {
+  const item = promociones.find((p) => p.id === id);
+  if (!item) {
     return Response.json({ error: "No encontrado" }, { status: 404 });
   }
+  await deleteUpload(item.imagen);
   await writeData("promociones", promociones.filter((p) => p.id !== id));
   return Response.json({ ok: true });
 }

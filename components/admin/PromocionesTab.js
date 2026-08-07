@@ -36,6 +36,7 @@ export default function PromocionesTab({ token }) {
       if (file) {
         const uploadData = new FormData();
         uploadData.append("file", file);
+        uploadData.append("tipo", "imagen");
         const uploadRes = await fetch("/api/upload", {
           method: "POST",
           headers: { "x-admin-token": token },

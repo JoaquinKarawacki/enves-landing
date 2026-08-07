@@ -680,6 +680,7 @@ section{position:relative;}
   display:none;
 }
 .form-msg.is-visible{display:block;}
+.form-msg.is-error{color:#c0392b;}
 @media (max-width:900px){
   .contact-grid{grid-template-columns:1fr;}
 }

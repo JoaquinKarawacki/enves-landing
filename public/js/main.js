@@ -109,29 +109,34 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  /* ---- Contact form (mailto, no backend) ---- */
-  const form = document.querySelector('.js-contact-form');
-  if (form) {
-    const CONTACT_RECIPIENTS = ['contacto@enves.com.uy', 'Ldeleon@enves.com.uy', 'Scolistro@enves.com.uy'];
-    form.addEventListener('submit', (e) => {
+  /* ---- Contact & CV forms (real backend via /api/contacto) ---- */
+  function wireForm(form, successText) {
+    if (!form) return;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const msg = form.querySelector('.form-msg');
+    const setMsg = (text, isError) => {
+      if (!msg) return;
+      msg.textContent = text;
+      msg.classList.add('is-visible');
+      msg.classList.toggle('is-error', !!isError);
+    };
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const data = new FormData(form);
-      const lines = [];
-      if (data.get('nombre')) lines.push(`Nombre: ${data.get('nombre')}`);
-      if (data.get('telefono')) lines.push(`Teléfono: ${data.get('telefono')}`);
-      if (data.get('email')) lines.push(`Email: ${data.get('email')}`);
-      if (data.get('rubro')) lines.push(`Rubro de interés: ${data.get('rubro')}`);
-      if (data.get('mensaje')) lines.push(`Mensaje: ${data.get('mensaje')}`);
-      const subject = encodeURIComponent('Nueva consulta desde la web');
-      const body = encodeURIComponent(lines.join('\n'));
-      window.location.href = `mailto:${CONTACT_RECIPIENTS.join(',')}?subject=${subject}&body=${body}`;
-
-      const msg = form.querySelector('.form-msg');
-      if (msg) {
-        msg.textContent = 'Se abrió tu cliente de correo con la consulta lista para enviar.';
-        msg.classList.add('is-visible');
+      if (submitBtn) submitBtn.disabled = true;
+      setMsg('Enviando...', false);
+      try {
+        const res = await fetch('/api/contacto', { method: 'POST', body: new FormData(form) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || 'No se pudo enviar');
+        setMsg(successText, false);
+        form.reset();
+      } catch (err) {
+        setMsg('No pudimos enviar tu consulta. Probá de nuevo o escribinos por WhatsApp.', true);
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
-      form.reset();
     });
   }
+  wireForm(document.querySelector('.js-contact-form'), 'Gracias, recibimos tu consulta. Te vamos a contactar a la brevedad.');
+  wireForm(document.querySelector('.js-cv-form'), 'Gracias, recibimos tu CV. Te vamos a contactar si hay una oportunidad para vos.');
 });

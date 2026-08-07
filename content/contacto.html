@@ -113,17 +113,37 @@
 
 <section class="section-pad" style="padding-top:0;">
   <div class="container">
-    <div class="cta-banner" style="border-radius:var(--radius-lg);">
+    <div class="cta-banner" style="border-radius:var(--radius-lg);flex-direction:column;align-items:stretch;">
       <div class="stripe-corner"></div>
-      <div style="position:relative;z-index:2;">
+      <div style="position:relative;z-index:2;margin-bottom:1.5rem;">
         <h3>Trabajá con nosotros</h3>
-        <p>Si te interesa sumarte al equipo de Envés, escribinos y contanos sobre vos.</p>
+        <p>Si te interesa sumarte al equipo de Envés, contanos sobre vos y adjuntá tu CV.</p>
       </div>
-      <div style="position:relative;z-index:2;display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="mailto:contacto@enves.com.uy,Ldeleon@enves.com.uy,Scolistro@enves.com.uy?subject=Trabaj%C3%A1%20con%20nosotros" class="btn btn-outline-light">Enviar tu CV
+      <form class="contact-form js-cv-form" style="position:relative;z-index:2;max-width:520px;">
+        <input type="hidden" name="tipo" value="cv">
+        <div class="form-row">
+          <div class="field">
+            <label for="cv-nombre">Nombre</label>
+            <input type="text" id="cv-nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="cv-email">Email</label>
+            <input type="email" id="cv-email" name="email" placeholder="tu@email.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cv-mensaje">Mensaje (opcional)</label>
+          <textarea id="cv-mensaje" name="mensaje" placeholder="Contanos brevemente sobre vos"></textarea>
+        </div>
+        <div class="field">
+          <label for="cv-archivo">Tu CV (PDF, máx. 5MB)</label>
+          <input type="file" id="cv-archivo" name="cv" accept="application/pdf" required>
+        </div>
+        <button type="submit" class="btn btn-dark">Enviar tu CV
           <span class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-        </a>
-      </div>
+        </button>
+        <p class="form-msg" role="status"></p>
+      </form>
     </div>
   </div>
 </section>

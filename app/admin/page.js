@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import PromocionesTab from "@/components/admin/PromocionesTab";
-import SiniestrosBseTab from "@/components/admin/SiniestrosBseTab";
+import InstructivosSiniestrosTab from "@/components/admin/InstructivosSiniestrosTab";
 
 // Cada feature futura agrega su propia entrada acá:
 // { key, label, render: (token) => <Componente token={token} /> }
 const TABS = [
   { key: "promociones", label: "Promociones", render: (token) => <PromocionesTab token={token} /> },
-  { key: "siniestros-bse", label: "Siniestros BSE", render: (token) => <SiniestrosBseTab token={token} /> },
+  { key: "instructivos-siniestros", label: "Instructivos de Siniestros", render: (token) => <InstructivosSiniestrosTab token={token} /> },
 ];
 
 async function verify(token) {

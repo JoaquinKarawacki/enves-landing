@@ -1,5 +1,7 @@
 import { readData, writeData } from "@/lib/storage";
-import { ordenarSiniestrosBse, generarSlug } from "@/lib/siniestrosBse";
+import { ordenarInstructivos, generarSlug } from "@/lib/instructivosSiniestros";
+
+const RECURSO = "instructivos-siniestros";
 
 function validarToken(request) {
   const token = request.headers.get("x-admin-token");
@@ -7,8 +9,8 @@ function validarToken(request) {
 }
 
 export async function GET() {
-  const items = await readData("siniestros-bse", []);
-  return Response.json(ordenarSiniestrosBse(items));
+  const items = await readData(RECURSO, []);
+  return Response.json(ordenarInstructivos(items));
 }
 
 export async function POST(request) {
@@ -17,12 +19,12 @@ export async function POST(request) {
   }
 
   const item = await request.json();
-  const { titulo, descripcion, archivo } = item;
-  if (!titulo || !descripcion || !archivo) {
+  const { aseguradora, titulo, descripcion, archivo } = item;
+  if (!aseguradora || !titulo || !descripcion || !archivo) {
     return Response.json({ error: "Faltan datos obligatorios" }, { status: 400 });
   }
 
-  const items = await readData("siniestros-bse", []);
+  const items = await readData(RECURSO, []);
   const slug = generarSlug(titulo);
   if (items.some((i) => i.slug === slug)) {
     return Response.json({ error: "Ya existe una publicación con ese título" }, { status: 400 });
@@ -31,13 +33,14 @@ export async function POST(request) {
   const nuevo = {
     id: Date.now(),
     slug,
-    href: `/siniestros-bse/${slug}`,
+    href: `/instructivos-siniestros/${slug}`,
+    aseguradora,
     titulo,
     descripcion,
     archivo,
   };
   items.unshift(nuevo);
-  await writeData("siniestros-bse", items);
+  await writeData(RECURSO, items);
   return Response.json(nuevo, { status: 201 });
 }
 
@@ -47,10 +50,10 @@ export async function DELETE(request) {
   }
 
   const { id } = await request.json();
-  const items = await readData("siniestros-bse", []);
+  const items = await readData(RECURSO, []);
   if (!items.some((i) => i.id === id)) {
     return Response.json({ error: "No encontrado" }, { status: 404 });
   }
-  await writeData("siniestros-bse", items.filter((i) => i.id !== id));
+  await writeData(RECURSO, items.filter((i) => i.id !== id));
   return Response.json({ ok: true });
 }

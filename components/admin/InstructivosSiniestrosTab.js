@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-const EMPTY_FORM = { titulo: "", descripcion: "" };
+const EMPTY_FORM = { aseguradora: "", titulo: "", descripcion: "" };
 const MAX_PDF_SIZE = 10 * 1024 * 1024;
 
-export default function SiniestrosBseTab({ token }) {
+export default function InstructivosSiniestrosTab({ token }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [form, setForm] = useState(EMPTY_FORM);
@@ -15,7 +15,7 @@ export default function SiniestrosBseTab({ token }) {
 
   async function load() {
     setLoading(true);
-    const res = await fetch("/api/siniestros-bse");
+    const res = await fetch("/api/instructivos-siniestros");
     setItems(await res.json());
     setLoading(false);
   }
@@ -55,7 +55,7 @@ export default function SiniestrosBseTab({ token }) {
       const uploadJson = await uploadRes.json();
       if (!uploadRes.ok) throw new Error(uploadJson.error || "No se pudo subir el PDF");
 
-      const createRes = await fetch("/api/siniestros-bse", {
+      const createRes = await fetch("/api/instructivos-siniestros", {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-admin-token": token },
         body: JSON.stringify({ ...form, archivo: uploadJson.url }),
@@ -76,7 +76,7 @@ export default function SiniestrosBseTab({ token }) {
 
   async function handleDelete(id) {
     if (!confirm("¿Eliminar este instructivo?")) return;
-    await fetch("/api/siniestros-bse", {
+    await fetch("/api/instructivos-siniestros", {
       method: "DELETE",
       headers: { "Content-Type": "application/json", "x-admin-token": token },
       body: JSON.stringify({ id }),
@@ -87,7 +87,17 @@ export default function SiniestrosBseTab({ token }) {
   return (
     <div>
       <form onSubmit={handleSubmit} style={styles.card}>
-        <h2 style={styles.h2}>Nuevo instructivo de siniestros BSE</h2>
+        <h2 style={styles.h2}>Nuevo instructivo de siniestros</h2>
+        <label style={styles.label}>
+          Aseguradora
+          <input
+            style={styles.input}
+            required
+            placeholder="BSE, Mapfre, Sura..."
+            value={form.aseguradora}
+            onChange={(e) => updateField("aseguradora", e.target.value)}
+          />
+        </label>
         <label style={styles.label}>
           Título
           <input style={styles.input} required value={form.titulo} onChange={(e) => updateField("titulo", e.target.value)} />
@@ -123,6 +133,7 @@ export default function SiniestrosBseTab({ token }) {
               <div style={{ flex: 1 }}>
                 <strong>{item.titulo}</strong>
                 <div style={{ fontSize: "0.85rem", color: "#666" }}>
+                  {item.aseguradora} ·{" "}
                   <a href={item.href} target="_blank" rel="noopener">
                     {item.href}
                   </a>

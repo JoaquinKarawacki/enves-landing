@@ -6,7 +6,7 @@ import { readData } from "@/lib/storage";
 export const dynamic = "force-dynamic";
 
 async function getItem(slug) {
-  const items = await readData("siniestros-bse", []);
+  const items = await readData("instructivos-siniestros", []);
   return items.find((i) => i.slug === slug) || null;
 }
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function SiniestroBseDetallePage({ params }) {
+export default async function InstructivoSiniestroDetallePage({ params }) {
   const { slug } = await params;
   const item = await getItem(slug);
   if (!item) notFound();
@@ -32,9 +32,9 @@ export default async function SiniestroBseDetallePage({ params }) {
         <div className="stripe-corner"></div>
         <div className="container">
           <div className="breadcrumb">
-            <a href="/">Inicio</a> / <a href="/siniestros-bse">Siniestros BSE</a> / {item.titulo}
+            <a href="/">Inicio</a> / <a href="/instructivos-siniestros">Instructivos</a> / {item.titulo}
           </div>
-          <span className="eyebrow on-dark"><span className="dot"></span> BSE</span>
+          <span className="eyebrow on-dark"><span className="dot"></span> {item.aseguradora}</span>
           <h1>{item.titulo}</h1>
         </div>
       </section>

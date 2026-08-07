@@ -44,6 +44,7 @@ export default function Footer() {
       </div>
       <div className="container footer-bottom">
         <span>© <span className="js-year">{new Date().getFullYear()}</span> Envés Seguros. Todos los derechos reservados.</span>
+        <a href="/admin">Acceso interno</a>
       </div>
     </footer>
   );

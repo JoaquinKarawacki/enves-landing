@@ -186,7 +186,7 @@ section{position:relative;}
 .brand.on-dark .brand-word{color:#fff;}
 .brand.on-dark .brand-sub{color:rgba(255,255,255,.65);}
 
-.main-nav{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap;}
+.main-nav{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:nowrap;flex:1;}
 .main-nav a,.main-nav .nav-link{
   position:relative;
   font-weight:600;

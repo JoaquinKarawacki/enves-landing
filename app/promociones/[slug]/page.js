@@ -39,11 +39,13 @@ export default async function PromocionDetallePage({ params }) {
       </section>
       <section className="section-pad">
         <div className="container" style={{ maxWidth: 760 }}>
-          <img
-            src={promo.imagen}
-            alt={promo.titulo}
-            style={{ width: "100%", borderRadius: "var(--radius-lg)", marginBottom: "2rem" }}
-          />
+          {promo.imagen && (
+            <img
+              src={promo.imagen}
+              alt={promo.titulo}
+              style={{ width: "100%", borderRadius: "var(--radius-lg)", marginBottom: "2rem" }}
+            />
+          )}
           {promo.descripcion.split("\n").filter(Boolean).map((parrafo, i) => (
             <p key={i} style={{ marginBottom: "1.2rem" }}>{parrafo}</p>
           ))}

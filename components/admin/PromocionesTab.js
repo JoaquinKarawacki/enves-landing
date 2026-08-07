@@ -30,26 +30,26 @@ export default function PromocionesTab({ token }) {
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
-    if (!file) {
-      setError("Falta la imagen");
-      return;
-    }
     setSubmitting(true);
     try {
-      const uploadData = new FormData();
-      uploadData.append("file", file);
-      const uploadRes = await fetch("/api/upload", {
-        method: "POST",
-        headers: { "x-admin-token": token },
-        body: uploadData,
-      });
-      const uploadJson = await uploadRes.json();
-      if (!uploadRes.ok) throw new Error(uploadJson.error || "No se pudo subir la imagen");
+      let imagen = "";
+      if (file) {
+        const uploadData = new FormData();
+        uploadData.append("file", file);
+        const uploadRes = await fetch("/api/upload", {
+          method: "POST",
+          headers: { "x-admin-token": token },
+          body: uploadData,
+        });
+        const uploadJson = await uploadRes.json();
+        if (!uploadRes.ok) throw new Error(uploadJson.error || "No se pudo subir la imagen");
+        imagen = uploadJson.url;
+      }
 
       const createRes = await fetch("/api/promociones", {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-admin-token": token },
-        body: JSON.stringify({ ...form, imagen: uploadJson.url }),
+        body: JSON.stringify({ ...form, imagen }),
       });
       const createJson = await createRes.json();
       if (!createRes.ok) throw new Error(createJson.error || "No se pudo crear la promoción");
@@ -131,8 +131,8 @@ export default function PromocionesTab({ token }) {
           />
         </label>
         <label style={styles.label}>
-          Imagen
-          <input style={styles.input} type="file" accept="image/*" required onChange={(e) => setFile(e.target.files[0])} />
+          Imagen (opcional)
+          <input style={styles.input} type="file" accept="image/*" onChange={(e) => setFile(e.target.files[0])} />
         </label>
         {error && <p style={styles.error}>{error}</p>}
         <button type="submit" disabled={submitting} style={styles.button}>

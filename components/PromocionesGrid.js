@@ -1,3 +1,17 @@
+const placeholderStyle = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "var(--paper-warm)",
+  color: "var(--orange-deep)",
+  fontWeight: 700,
+  fontSize: "1.1rem",
+  textTransform: "uppercase",
+  letterSpacing: ".04em",
+};
+
 export default function PromocionesGrid({ promociones }) {
   if (!promociones.length) {
     return (
@@ -13,7 +27,11 @@ export default function PromocionesGrid({ promociones }) {
       {promociones.map((promo) => (
         <article className="news-card" key={promo.id}>
           <div className="news-thumb">
-            <img src={promo.imagen} alt={promo.titulo} />
+            {promo.imagen ? (
+              <img src={promo.imagen} alt={promo.titulo} />
+            ) : (
+              <div style={placeholderStyle}>{promo.aseguradora}</div>
+            )}
           </div>
           <div className="news-body">
             <span className="news-date">{promo.aseguradora}</span>

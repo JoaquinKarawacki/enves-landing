@@ -17,8 +17,8 @@ export async function POST(request) {
   }
 
   const item = await request.json();
-  const { aseguradora, titulo, resumen, descripcion, imagen } = item;
-  if (!aseguradora || !titulo || !resumen || !descripcion || !imagen) {
+  const { aseguradora, titulo, resumen, descripcion } = item;
+  if (!aseguradora || !titulo || !resumen || !descripcion) {
     return Response.json({ error: "Faltan datos obligatorios" }, { status: 400 });
   }
 
@@ -36,7 +36,7 @@ export async function POST(request) {
     titulo,
     resumen,
     descripcion,
-    imagen,
+    imagen: item.imagen || "",
     condicionesUrl: item.condicionesUrl || "",
     vigenciaHasta: item.vigenciaHasta || "",
   };
